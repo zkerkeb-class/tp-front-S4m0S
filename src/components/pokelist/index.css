@@ -1,11 +1,146 @@
-.poke-list-container{
+.poke-list-container {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
 }
 
-.poke-list{
+.poke-list {
     display: flex;
     flex-wrap: wrap;
-    gap:8px;
+    gap: 8px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.btn-add {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: #43a047;
+}
+
+.pagination {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+/* Popup */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: #1e1e2e;
+    border-radius: 16px;
+    padding: 24px;
+    min-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.popup-title {
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.popup-form input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background: #2a2a3d;
+    color: white;
+    font-size: 14px;
+}
+
+.popup-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-stat-row label {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.popup-stat-row input {
+    width: 80px;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-cancel {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background-color: #555;
+}
+
+.btn-create {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-create:hover {
+    background-color: #43a047;
+}
+
+.blur {
+    filter: blur(5px);
+    pointer-events: none;
 }

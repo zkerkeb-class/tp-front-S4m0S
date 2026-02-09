@@ -1,11 +1,9 @@
 .poke-card{
-    /* background-color: red; */
-    /* background-color: #7B4B94; */
     border-radius: 4px;
     display:flex;
     flex-direction: column;
-    width: 200px;
-    min-height: 250px;
+    width: 300px;
+    min-height: 300px;
     cursor: pointer;
 }
 
@@ -21,31 +19,18 @@
     justify-content: flex-start;
     padding: 8px;
     padding-right: 40px;
-    width: fit-content;
-    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%);
     background-color: #6A3B7A;
 }
 
 
 .poke-image{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
-.poke-image-background{
-    background-color: blanchedalmond;
-    margin:8px;
-}
 
-.poke-type-font{
-    font-size: 10px;
-}
 
-.poke-stat-row{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 8px;
-}
+
 
 /* Couleurs par type de Pokémon */
 .poke-card-header.poke-type-normal { background-color: #A8A878; }
