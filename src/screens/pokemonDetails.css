@@ -1,5 +1,5 @@
 .poke-image-background{
-    background-color: blanchedalmond;
+    background-color: #FFF8DE;
     margin:8px;
     border-radius: 8px;
 }
@@ -26,8 +26,10 @@
 .poke-detail-card-container{
     border-radius: 8%;
     padding: 12px;
-    background-color:azure;
+    background-color:#FFF2C6;
     min-width: 650px;
+    border-color: grey;
+    border-width: 8px;
 }
 
 .delete-button{
@@ -74,3 +76,31 @@
     padding: 12px;
 }
 
+.poke-detail-card-container input {
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 24px;
+    height: 48px;
+    font-size: x-large;
+    text-align: center;
+    width: 200px;
+    transition: all ease-in-out 0.3s;
+    background-color: #AAC4F5;
+}
+
+.poke-detail-card-container input:hover{
+    transform: translateY(-12%);
+    box-shadow: -1px 4px gray;
+    border-color: black;
+}
+
+.poke-detail-card-container input:active{
+    border-color: black;
+}
+
+.poke-detail-card-container h1 {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}

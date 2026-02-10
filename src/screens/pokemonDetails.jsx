@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {Link, useNavigate, useParams} from 'react-router';
 import usePokemon from '../hook/usePokemon';
 import './pokemonDetails.css'
@@ -9,14 +9,22 @@ const PokemonDetails = () => {
     const [editing, setEditing] = useState(false)
     const [editedBase, setEditedBase] = useState(null)
 
+    const [name, setName] = useState(null)
+
     const navigate = useNavigate();
     const {pokemonData, loading, error} = usePokemon(id);
     console.log('pokemonData details', pokemonData);
 
-
+    useEffect(() => {
+        setName(pokemonData.name?.french)
+    })
+    
+    
     if (loading) {
         return <p>Chargement des détails du Pokémon...</p>;
     }
+    
+
     
     const startEditing = () => {
         setEditedBase({...pokemonData.base});
@@ -27,12 +35,16 @@ const PokemonDetails = () => {
         setEditedBase(prev => ({...prev, [statName]: Number(value)}));
     }
 
+    const handleNameChange = (value) => {
+        setName(value)
+    }
+
     const saveChanges = async () => {
         try {
             const response = await fetch(`http://localhost:3000/pokemons/${id}`, {
                 method: "PUT",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({...pokemonData, base: editedBase})
+                body: JSON.stringify({...pokemonData, base: editedBase ,name: {french : name}})
             });
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -60,6 +72,8 @@ const PokemonDetails = () => {
             navigate('/');
         }
     }
+
+    
 
     return (
 
@@ -95,7 +109,20 @@ const PokemonDetails = () => {
                         Edit Pokemon
                     </button>
                 )}
-                <h1>Détails du Pokémon {pokemonData.name.french}</h1>
+                <h1>Détails du Pokémon {
+                    editing ? (
+                        <>
+                            <input
+                                    type="string"
+                                    value={name}
+                                    onChange={(e) => handleNameChange(e.target.value)}
+                                    className=''
+                                />
+                        </>
+                    ) : (
+                        <span>{name}</span>
+                    )}
+                     </h1>
                 <div className="poke">
                     <img src={pokemonData.image} alt="Pokémon" className="poke-image-details" />
                 </div>
