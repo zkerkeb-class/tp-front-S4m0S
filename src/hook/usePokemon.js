@@ -8,7 +8,7 @@ const usePokemon = (pokemonId) => {
     useEffect(() => {
         const fetchPokemon = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/pokemons/${pokemonId}`);
+                const response = await fetch(`/pokemons/${pokemonId}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

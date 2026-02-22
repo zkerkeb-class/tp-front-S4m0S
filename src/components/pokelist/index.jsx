@@ -46,7 +46,7 @@ const PokeList = () => {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:3000/pokemons/search?name=${encodeURIComponent(query)}`);
+            const response = await fetch(`/pokemons/search?name=${encodeURIComponent(query)}`);
             if (!response.ok) throw new Error("Network response was not ok");
             const data = await response.json();
             setSearchResults(Array.isArray(data) ? data : data.data);
@@ -73,7 +73,7 @@ const PokeList = () => {
             formData.append("file", image);
           }
    
-          const response = await fetch("http://localhost:3000/pokemons", {
+          const response = await fetch("/pokemons", {
             method: "POST",
             body: formData,
           });
@@ -91,7 +91,7 @@ const PokeList = () => {
       };
 
     useEffect(() => {
-        fetch(`http://localhost:3000/pokemons?offset=${offset}&limit=${limit}`)
+        fetch(`/pokemons?offset=${offset}&limit=${limit}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log("Données reçues:", data);

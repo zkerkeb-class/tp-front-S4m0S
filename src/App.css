@@ -1,6 +1,7 @@
 #root {
   margin: 0 auto;
-  padding: 4rem;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
   text-align: center;
-  background-color: #FFF2C6;
+  background: #0d1117;
 }

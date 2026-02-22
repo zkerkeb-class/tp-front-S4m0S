@@ -41,7 +41,7 @@ const PokemonDetails = () => {
 
     const saveChanges = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/pokemons/${id}`, {
+            const response = await fetch(`/pokemons/${id}`, {
                 method: "PUT",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({...pokemonData, base: editedBase ,name: {french : name}})
@@ -58,7 +58,7 @@ const PokemonDetails = () => {
 
     const deletePokemon = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/pokemons/${id}`, {
+            const response = await fetch(`/pokemons/${id}`, {
                 method : "DELETE"
             })
     
