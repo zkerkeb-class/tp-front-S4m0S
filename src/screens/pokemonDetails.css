@@ -1,0 +1,231 @@
+.full-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+/* Back button */
+.back-to-list {
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 9px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-to-list:hover {
+  background: rgba(255, 255, 255, 0.11);
+  color: white;
+  transform: translateX(-3px);
+}
+
+.back-to-list a {
+  color: inherit;
+}
+
+/* Main detail card */
+.poke-detail-card-container {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  padding: 32px;
+  min-width: 480px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Pokemon name heading */
+.poke-detail-card-container h1 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+/* Action buttons at top */
+.poke-detail-card-container > button {
+  align-self: flex-end;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.poke-detail-card-container > button:hover {
+  background: rgba(239, 68, 68, 0.35);
+  color: white;
+}
+
+/* Pokemon image container */
+.poke {
+  display: flex;
+  justify-content: center;
+}
+
+.poke-image-background {
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.poke-image-details {
+  width: 240px;
+  height: 240px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.poke-image-details:hover {
+  transform: scale(1.05);
+}
+
+/* Stat rows */
+.poke-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+  gap: 12px;
+}
+
+.poke-type-font {
+  font-size: 15px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.poke-stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+/* Editing inputs */
+.poke-detail-card-container input[type="text"],
+.poke-detail-card-container input[type="string"],
+.poke-detail-card-container input[type="number"] {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  height: 40px;
+  font-size: 1rem;
+  font-family: inherit;
+  text-align: center;
+  width: 130px;
+  transition: all 0.2s ease;
+  background: rgba(99, 102, 241, 0.15);
+  color: #e2e8f0;
+  outline: none;
+}
+
+.poke-detail-card-container input:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.poke-detail-card-container input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Save / Cancel buttons in edit mode */
+.poke-detail-card-container > div button,
+.poke-detail-card-container > button:last-of-type,
+.poke-detail-card-container > button:nth-last-of-type(2) {
+  font-family: inherit;
+}
+
+/* Delete/Edit action buttons */
+.delete-button {
+  background: #dc2626 !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+}
+
+.delete-button:hover {
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+  transform: translateY(-1px);
+}
+
+.cancel-button {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #94a3b8 !important;
+}
+
+.cancel-button:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: white !important;
+}
+
+/* Delete confirmation popup */
+.pop-up-container {
+  background: #161b2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  min-width: 420px;
+  padding: 28px;
+  border-radius: 20px;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.warning-text {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.blur {
+  filter: blur(6px);
+  pointer-events: none;
+}
